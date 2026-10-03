@@ -80,15 +80,16 @@ int main(int argc, char* argv[]) {
 
     Result date_parse_result = parse_date_str(date_str, date_str_len, &target_date_tm);
     if (date_parse_result.app_err == APP_ERR_DATE_STR_INVALID_LENGTH) {
-        printf("Woops, the date string given has an invalid length!");
+        printf("Woops, the date string given has an invalid length!\n");
+        return 1;
     }
 
     time_t now = time(NULL);
     time_t target_date = mktime(&target_date_tm);
 
-    double seconds_diff = difftime(target_date, now);
+    double days_diff = difftime(target_date, now) / (60 * 60 * 24) + 1;
 
-    printf("Aproximatelly %d days until %s", (int)(seconds_diff / (60 * 60 * 24) + 1), asctime(&target_date_tm));
+    printf("Aproximatelly %.0f days until %s", days_diff, asctime(&target_date_tm));
 
     return 0;
 }
