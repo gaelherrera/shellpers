@@ -10,3 +10,4 @@ temp
 # Binaries and other objects generated as tools
 bin
 build
+*.out
