@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# audit-script.sh: static review of a shell script BEFORE you run it.
+# audit-bash-script.sh: static review of a shell script BEFORE you run it.
 #
-#   bash audit-script.sh run.sh              audit, then ask before running
-#   bash audit-script.sh --check run.sh      audit only, never runs anything
-#   pbpaste | bash audit-script.sh -         audit the clipboard (check only)
+#   bash audit-bash-script.sh run.sh              audit, then ask before running
+#   bash audit-bash-script.sh --check run.sh      audit only, never runs anything
+#   pbpaste | bash audit-bash-script.sh -         audit the clipboard (check only)
 #
 # Exit codes with --check: 0 = no HIGH/WARN, 1 = WARN found, 2 = HIGH found.
 #
